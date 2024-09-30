@@ -1,4 +1,4 @@
-package com.kaisik.openschoolsecurity.security;
+package com.kaisik.openschoolsecurity.security.jwt;
 
 import com.kaisik.openschoolsecurity.dto.JwtAuthenticationDto;
 import io.jsonwebtoken.*;
