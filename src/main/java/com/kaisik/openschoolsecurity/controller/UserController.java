@@ -13,16 +13,36 @@ public class UserController {
 
     private final UserService userService;
 
+    /**
+     * Регистрация нового пользователя
+     *
+     * @param userDto
+     * @return
+     */
     @PostMapping("/registration")
     public String createUser(@RequestBody UserDto userDto) {
         return userService.addUser(userDto);
     }
 
+    /**
+     * Получение юзера по id
+     *
+     * @param id
+     * @return
+     * @throws ChangeSetPersister.NotFoundException
+     */
     @GetMapping("/{id}")
     public UserDto getUserById(@PathVariable String id) throws ChangeSetPersister.NotFoundException {
         return userService.getUserById(id);
     }
 
+    /**
+     * Получение юзера по почте
+     *
+     * @param email
+     * @return
+     * @throws ChangeSetPersister.NotFoundException
+     */
     @GetMapping("/email/{email}")
     public UserDto getUserByEmail(@PathVariable String email) throws ChangeSetPersister.NotFoundException {
         return userService.getUserByEmail(email);

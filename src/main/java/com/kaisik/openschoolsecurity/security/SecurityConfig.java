@@ -14,6 +14,9 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+/**
+ * Конфигурация секьюрити
+ */
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -22,6 +25,13 @@ public class SecurityConfig {
 
     private final JwtFilter jwtFilter;
 
+    /**
+     * Получение бина фильтра для входящих запросов
+     *
+     * @param http
+     * @return
+     * @throws Exception
+     */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -34,6 +44,10 @@ public class SecurityConfig {
         return http.build();
     }
 
+    /**
+     * Кодировщик паролей
+     * @return
+     */
     @Bean
     public PasswordEncoder getPasswordEncoder() {
         return new BCryptPasswordEncoder(4);

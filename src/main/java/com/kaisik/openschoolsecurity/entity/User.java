@@ -8,6 +8,9 @@ import lombok.Setter;
 import java.util.Objects;
 import java.util.UUID;
 
+/**
+ * Энтити - Юзер
+ */
 @Entity
 @Table(name = "users")
 @Getter

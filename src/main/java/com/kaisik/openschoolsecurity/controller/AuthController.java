@@ -21,6 +21,12 @@ public class AuthController {
 
     private final UserService userService;
 
+    /**
+     * Получение токена
+     *
+     * @param userCredentialsDto
+     * @return
+     */
     @PostMapping("/sing-in")
     public ResponseEntity<JwtAuthenticationDto> singIn(@RequestBody UserCredentialsDto userCredentialsDto) {
         try {
@@ -31,6 +37,13 @@ public class AuthController {
         }
     }
 
+    /**
+     * Обновление токена
+     *
+     * @param refreshTokenDto
+     * @return
+     * @throws Exception
+     */
     @PostMapping("/refresh")
     public JwtAuthenticationDto refresh(@RequestBody RefreshTokenDto refreshTokenDto) throws Exception {
         return userService.refreshToken(refreshTokenDto);
