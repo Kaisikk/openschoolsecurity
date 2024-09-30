@@ -3,7 +3,7 @@ spring:
     banner-mode: off
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create-drop
     open-in-view: false
   jackson:
     serialization:
@@ -11,7 +11,7 @@ spring:
 
 
   datasource:
-    url: jdbc:mysql://localhost:3306/testDb
+    url: jdbc:mysql://localhost:3306/SECURITY_db
     username: root
     password: root
 

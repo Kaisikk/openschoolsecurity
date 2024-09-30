@@ -31,6 +31,7 @@ public class JwtFilter extends OncePerRequestFilter {
         if (token != null && jwtService.validateJwtToken(token)) {
             setCustomUserDetailsToSecurityContextHolder(token);
         }
+        filterChain.doFilter(request, response);
     }
 
     private void setCustomUserDetailsToSecurityContextHolder(String token) {
