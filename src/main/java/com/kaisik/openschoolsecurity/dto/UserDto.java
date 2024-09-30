@@ -2,7 +2,7 @@ package com.kaisik.openschoolsecurity.dto;
 
 import lombok.Data;
 
-@Dasa
+@Data
 public class UserDto {
     String userId;
     String firstName;
